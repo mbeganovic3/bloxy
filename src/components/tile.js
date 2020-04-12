@@ -8,8 +8,8 @@ import {
   LineBasicMaterial,
   LineSegments,
   CylinderGeometry
-} from "three";
-import { SIDE_LENGTH } from "./constants";
+} from "/node_modules/three/src/Three.js";
+import { SIDE_LENGTH } from "./constants.js";
 
 const TILE_HEIGHT = 20;
 

@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto Condensed', sans-serif;
+    zoom: 74%;
 }
 
 canvas {
@@ -38,26 +39,13 @@ canvas {
     justify-content: space-around;
 }
 
-button {
-    font: 24px 'Roboto Condensed', sans-serif;
-    padding: 10px 20px;
-    border-radius: 100px;
-    border: 0;
-}
-
-button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: black;
-}
-
 header {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-header > section {
+header>section {
     font-size: 24px;
     padding: 0 20px;
 }
@@ -86,4 +74,43 @@ a {
 
 a:hover {
     cursor: pointer;
+}
+
+.row {
+    font: 24px 'Roboto Condensed', sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    background-color: black;
+    color: white;
+}
+
+.choice {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.about {
+    font: 24px 'Roboto Condensed', sans-serif;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: 0;
+}
+
+.orientation {
+    position: fixed;
+    bottom:   0;
 }

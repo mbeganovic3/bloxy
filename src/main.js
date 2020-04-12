@@ -1,4 +1,4 @@
-import Game from './components/game';
+import Game from './components/game.js';
 
 const NOOP = () => {};
 
