@@ -1,6 +1,6 @@
 import Board from './board.js';
 import Block from './block.js';
-import * as THREE from '/node_modules/three/src/Three.js';
+import * as THREE from '/three/src/Three.js';
 
 
 const $root = $('#root');
