@@ -223,14 +223,14 @@ class Game {
 
   unlistenKeydown() {
     document.removeEventListener('keydown', this.handleKeydown);
-    document.removeEventListener('keydown', this.toggleDirection);
-    document.removeEventListener('keydown', this.chooseDirection);
+    // document.removeEventListener('keydown', this.toggleDirection);
+    // document.removeEventListener('keydown', this.chooseDirection);
   }
 
   listenKeydown() {
     document.addEventListener('keydown', this.handleKeydown);
-    document.addEventListener('keydown', this.toggleDirection);
-    document.addEventListener('keydown', this.chooseDirection);
+    // document.addEventListener('keydown', this.toggleDirection);
+    // document.addEventListener('keydown', this.chooseDirection);
   }
 
   handleKeydown(e) {
