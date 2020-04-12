@@ -2,6 +2,7 @@ import Board from './board.js';
 import Block from './block.js';
 import * as THREE from '/node_modules/three/src/Three.js';
 
+
 const $root = $('#root');
 let direction = "Right";
 $root.append(`<button id="top" class="row choice">Toggle Direction: ${direction}</button>`);
@@ -131,8 +132,11 @@ const KEYDOWN_EVENTS = [
 ];
 
 class Game {
+
+  
   constructor() {
     // 3D rendering
+
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 10000);
     this.camera.rotation.x = -Math.PI/5;
@@ -163,6 +167,10 @@ class Game {
     this.activators = [];
 
     this.handleKeydown = this.handleKeydown.bind(this);
+    this.toggleDirection = this.toggleDirection.bind(this);
+    this.chooseDirection = this.chooseDirection.bind(this);
+    document.getElementById("top").addEventListener("click", this.toggleDirection);
+    document.getElementById("bottom").addEventListener("click", this.chooseDirection);
 
     const modalBtn = document.querySelector(".modal-btn");
     modalBtn.addEventListener('click', () => this.reset());
@@ -215,10 +223,14 @@ class Game {
 
   unlistenKeydown() {
     document.removeEventListener('keydown', this.handleKeydown);
+    document.removeEventListener('keydown', this.toggleDirection);
+    document.removeEventListener('keydown', this.chooseDirection);
   }
 
   listenKeydown() {
     document.addEventListener('keydown', this.handleKeydown);
+    document.addEventListener('keydown', this.toggleDirection);
+    document.addEventListener('keydown', this.chooseDirection);
   }
 
   handleKeydown(e) {
@@ -283,11 +295,13 @@ class Game {
     }
     $root.empty();
     $root.append(`<button id="top" class="row choice" style="background:palegreen">Toggle Direction: ${direction}</button>`);
+    document.getElementById("top").addEventListener("click", this.toggleDirection);
   }
 
   chooseDirection(){
     $root.empty();
     $root.append(`<button id="top" class="row choice" >Toggle Direction: ${direction}</button>`);
+    document.getElementById("top").addEventListener("click", this.toggleDirection);
     document.getElementById("bottom").setAttribute("style", "background: palegreen;");
     switch(direction) {
       case "Left":
