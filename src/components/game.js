@@ -234,6 +234,7 @@ class Game {
   }
 
   handleKeydown(e) {
+    if(e.repeat) return;
     switch(e.key) {
       case "ArrowLeft":
         this.block.rotate(0, 0, Math.PI/2);
