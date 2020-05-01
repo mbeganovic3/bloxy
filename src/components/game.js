@@ -2,6 +2,8 @@ import Board from './board.js';
 import Block from './block.js';
 import * as THREE from './three/src/Three.js';
 
+alert("Manipulate the block using the spacebar and enter key to get it to slide into the square hole. You can toggle between 4 choices of what direction to go with the block using the space bar, and choose with the enter key.")
+
 
 const $root = $('#root');
 let direction = "Right";
